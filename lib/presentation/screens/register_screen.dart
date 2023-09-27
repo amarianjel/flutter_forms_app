@@ -44,7 +44,6 @@ class _RegisterView extends StatelessWidget {
 }
 
 
-
 class _RegisterForm extends StatefulWidget {
   const _RegisterForm();
 
