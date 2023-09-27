@@ -14,6 +14,7 @@ class RegisterScreen extends StatelessWidget {
       body: const _RegisterView(),
     );
   }
+
 }
 
 
@@ -22,13 +23,13 @@ class _RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: SingleChildScrollView(
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.end,
-            children: [
+            children: const[
         
               FlutterLogo( size: 100 ),
 
@@ -42,6 +43,7 @@ class _RegisterView extends StatelessWidget {
     );
   }
 }
+
 
 
 class _RegisterForm extends StatefulWidget {
@@ -67,11 +69,7 @@ class _RegisterFormState extends State<_RegisterForm> {
 
           CustomTextFormField(
             label: 'Nombre de usuario',
-            onChanged: (value) {
-              setState(() {
-                username = value;
-              });
-            },
+            onChanged: (value) => username = value,
             validator: (value) {
               if ( value == null || value.isEmpty ) return 'Campo requerido';
               if ( value.trim().isEmpty ) return 'Campo requerido';
